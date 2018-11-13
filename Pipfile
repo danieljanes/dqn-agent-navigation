@@ -9,11 +9,13 @@ matplotlib = "==3.0.0"
 Pillow = "==4.2.1"
 protobuf = "==3.5.2"
 grpcio = "==1.11.0"
-navigation = {editable = true, path = "."}
+typing-extensions = "==3.6.6"
 dqn-navigation = {editable = true, path = "."}
 
 [dev-packages]
 pytest = "==3.2.2"
+pylint = "==2.1.1"
+mypy = "==0.641"
 
 [requires]
 python_version = "3.6"
