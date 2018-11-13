@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "==0.4.1"
+matplotlib = "==3.0.0"
+Pillow = "==4.2.1"
+protobuf = "==3.5.2"
+grpcio = "==1.11.0"
+navigation = {editable = true, path = "."}
+dqn-navigation = {editable = true, path = "."}
+
+[dev-packages]
+pytest = "==3.2.2"
+
+[requires]
+python_version = "3.6"
