@@ -42,6 +42,7 @@ def main():
             if done:
                 break
         print('\rEpisode {}\t Score: {:.2f}'.format(i_episode, score))
+    env.close()
 
 
 if __name__ == "__main__":
