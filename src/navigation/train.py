@@ -66,11 +66,11 @@ def main():
         scores_window.append(score)
         # Logging
         mean_score = np.mean(scores_window)
-        print('\rEpisode {}\tAverage Score: {:.2f}\tEpsilon: {:.3f}'.format(i_episode, mean_score, epsilon), end="")
+        print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, mean_score), end="")
         if i_episode % 100 == 0:
             print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, mean_score))
         if mean_score >= 13.0:
-            print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode-100, np.mean(scores_window)))
+            print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode-100, mean_score))
             utc_datetime = datetime.datetime.utcnow()
             dt = utc_datetime.strftime("%Y-%m-%dT%H:%M:%SZ")
             torch.save(agent.dqn_policy.state_dict(), 'weights/checkpoint_' + dt + '.pth')
