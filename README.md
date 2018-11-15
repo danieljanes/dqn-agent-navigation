@@ -1,10 +1,10 @@
-# Deep Reinforcement Learning: Navigation Agent
+# Deep Reinforcement Learning: Navigation
 
 The presented agent leverages Q-learning using a Deep Q-Network (DQN) [[Mnih et al., 2015](https://www.nature.com/articles/nature14236)], along with improvements such as Double Q-learning [[Hasselt et al., 2016](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12389/11847)] to improve training stability.
 
 ## Project Environment Details
 
-The agent must navigate the given environment with the goal of collecting as many yellow bananas as possible whilst avoiding blue bananas. Collecting yellow bananas yields a reward of `+1`, collecting blue bananas yields a return of `-1`. The environment is based on the [Unity ML-Agents Toolkit](https://github.com/Unity-Technologies/ml-agents).
+The agent's objective is to navigate the given environment and collect as many yellow bananas as possible whilst avoiding to collect blue bananas. Collecting yellow bananas yields a reward of `+1`, collecting blue bananas yields a return of `-1`. The environment is based on the [Unity ML-Agents Toolkit](https://github.com/Unity-Technologies/ml-agents).
 
 ![Agent Environment](https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif)
 
@@ -58,18 +58,20 @@ pipenv, version 2018.7.1
 
 ### Initial Setup
 
-Setting up the project consists of cloning the repository, unpacking the environment, and installing the dependencies:
+Setting up the project consists of cloning the repository, unpacking the environment, and installing dependencies:
 
 ```
 # clone repository
-git clone git@github.com:danieljanes/drlnd-project-1-navigation.git
-cd dqn-navigation
+git clone git@github.com:danieljanes/dqn-agent-navigation.git
+cd dqn-agent-navigation
 
 # unzip environment
 unzip -a unity_env/Banana.app.zip -d unity_env
 
+# use compatible version of pip inside this virtual environment
+pipenv run pip install -U pip==18.0
+
 # install dependencies
-pipenv run pip install -U pip==18.0  # use compatible version of pip inside this virtual environment
 pipenv install -e .
 ```
 
