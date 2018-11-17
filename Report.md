@@ -61,7 +61,11 @@ Episode 628	Average Score: 13.07
 Environment solved in 528 episodes!	Average Score: 13.07
 ```
 
-The saved model can be found in `weights/checkpoint.pth`. To watch an agent interact with the environment using the saved model weights and a greedy policy, please run:
+The following plot shows the score for each episode of the training run:
+
+![Training Plot](plot/figure_1.png)
+
+The saved model weights are stored in `weights/checkpoint.pth`. To watch an agent interact with the environment using the saved model weights and a greedy policy, please run:
 
 ```
 pipenv run python3 src/navigation/watch.py
