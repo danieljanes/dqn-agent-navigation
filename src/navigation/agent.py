@@ -17,7 +17,7 @@ BATCH_SIZE: Final = 64
 GAMMA: Final = 0.99
 TAU: Final = 1e-3
 LEARNING_RATE: Final = 5e-4
-UPDATE_EVERY: Final = 2  # 4
+UPDATE_EVERY: Final = 1
 DEVICE: Final = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 DOUBLE_Q_LEARNING: Final = True

@@ -9,7 +9,7 @@ from unityagents import UnityEnvironment
 from navigation.agent import Agent
 
 
-EPISODES: Final = 2000
+EPISODES: Final = 1000
 EPSILON_START: Final = 1.0
 EPSILON_END: Final = 0.01
 EPSILON_DECAY: Final = 0.995
