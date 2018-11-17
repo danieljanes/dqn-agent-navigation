@@ -71,7 +71,7 @@ pipenv run python3 src/navigation/watch.py
 
 Several improvement could help to yield faster convergence or more stable training:
 
-- Use Prioritized Experience Replay instead of .. to improve sampling fom the replay memory.
-- Use Duealing Networks to leverage the fact that state values should not vary vastly accross different actions.
-- Combine several improvements to the plain DQN algrorithm as shown by DeepMind with their Rainbow paper [[Hessel et al., 2017](https://deepmind.com/research/publications/rainbow-combining-improvements-deep-reinforcement-learning/)].
+- Use Prioritized Experience Replay [[Schaul et al., 2015](https://arxiv.org/abs/1511.05952)] instead of uniform random sampling to improve learning efficiency.
+- Use Dueling Network Architectures [[Wang et al., 2015](https://arxiv.org/abs/1511.06581)] to better generalize learning across different actions.
+- Combine several improvements to the plain DQN algrorithm as shown by DeepMind's Rainbow paper [[Hessel et al., 2017](https://deepmind.com/research/publications/rainbow-combining-improvements-deep-reinforcement-learning/)].
 - Explore usage of policy-based methods.
