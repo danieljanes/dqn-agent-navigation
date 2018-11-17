@@ -5,6 +5,9 @@ from unityagents import UnityEnvironment
 from navigation.agent import Agent
 
 
+NUM_EPISODES: Final = 3
+
+
 def main():
     env = UnityEnvironment(file_name="unity_env/Banana.app")
     
@@ -26,7 +29,6 @@ def main():
     epsilon = 0
 
     # Watch the agent for NUM_EPISODES
-    NUM_EPISODES: Final = 2
     for i_episode in range(NUM_EPISODES):
         env_info = env.reset(train_mode=False)[brain_name]
         state = env_info.vector_observations[0]
