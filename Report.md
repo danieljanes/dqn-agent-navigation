@@ -28,11 +28,11 @@ We train our model using the Deep Q-Learning algorithm [[Mnih et al., 2015](http
 
 **Fixed Q-Targets** stabilize the training process by using fixed parameters to calculate target values during training.
 
-**Double Q-learning** avoids overestimation of action values. This helps especially in early stages of training where the Q-values proposed by the model are not representative of the underlying Markov Process yet. By using separate networks for choosing an action and evaluating an action the training becomes more stable and converges faster.
-
 **Exploration/Exploitation** is controlled using parameter espilon. Epsilon slowly decreases from 1.0 to 0.01 after every episode.
 
-**Policy Refinement** happens after every second episode.
+**Policy Refinement** happens after every episode. This can be customized by setting the value of `UPDATE_EVERY` to values `>1`.
+
+**Double Q-learning** avoids overestimation of action values. This especially helps during early stages of training when the Q-values proposed by the model are not representative of the underlying Markov Process yet. By using separate networks for choosing an action and evaluating an action the training becomes more stable and converges faster. One can compare training with and without Double Q-learning by setting the boolean `DOUBLE_Q_LEARNING` (in file [agent.py](src/navigation/agent.py)) to `True` or `False` respectively.
 
 ### Training Runs
 
@@ -51,14 +51,14 @@ Environment solved in 450 episodes!	Average Score: 13.03
 Console logs from saved model training run:
 
 ```
-Episode 100	Average Score: 0.479
-Episode 200	Average Score: 3.80
-Episode 300	Average Score: 7.57
-Episode 400	Average Score: 9.53
-Episode 500	Average Score: 11.97
-Episode 600	Average Score: 12.73
-Episode 643	Average Score: 13.06
-Environment solved in 543 episodes!	Average Score: 13.06
+Episode 100	Average Score: 1.066
+Episode 200	Average Score: 3.78
+Episode 300	Average Score: 6.80
+Episode 400	Average Score: 8.68
+Episode 500	Average Score: 11.34
+Episode 600	Average Score: 12.09
+Episode 628	Average Score: 13.07
+Environment solved in 528 episodes!	Average Score: 13.07
 ```
 
 The saved model can be found in `weights/checkpoint.pth`. To watch an agent interact with the environment using the saved model weights and a greedy policy, please run:
@@ -74,4 +74,4 @@ Several improvement could help to yield faster convergence or more stable traini
 - Use Prioritized Experience Replay [[Schaul et al., 2015](https://arxiv.org/abs/1511.05952)] instead of uniform random sampling to improve learning efficiency.
 - Use Dueling Network Architectures [[Wang et al., 2015](https://arxiv.org/abs/1511.06581)] to better generalize learning across different actions.
 - Combine several improvements to the plain DQN algrorithm as shown by DeepMind's Rainbow paper [[Hessel et al., 2017](https://deepmind.com/research/publications/rainbow-combining-improvements-deep-reinforcement-learning/)].
-- Explore usage of policy-based methods.
+- Explore usage of policy-based methods. This could offer profound advantages: When running the agent using the committed weights and a greedy policy one can observe an interesting behaviour. The agent seems to be doing well for some amount of time until it gets stuck oscillating between two states until the end of an episode. Without the randomness introduced by an epsilon-greedy policy this is similar to an endless loop where e.g. in state A action "turn right" and in state B action "turn left" each have the highest Q-value thus resulting in an agent which cannot progress beyond those states until the episode is over.

@@ -30,12 +30,12 @@ An agent can perform the following four discrete actions:
 
 - `0`: Move forward
 - `1`: Move backward
-- `2`: Move left
-- `3`: Move right
+- `2`: Turn left
+- `3`: Turn right
 
 ### Solving the environment
 
-This environment is considered to be solved when the agent achieves an average score of `+13` over `100` consecutive episodes. An indication given by Udacity mentions that one should aim for solving the environment in less than `1800` episodes. The committed weights (in [weights/checkpoint.pth](weights/checkpoint.pth)) resulted from a training run which converged after `543` episodes with an average reward of `13.06`. Details about the agent's architecture are given in [Report.md](Report.md).
+This environment is considered to be solved when the agent achieves an average score of `+13` over `100` consecutive episodes. An indication given by Udacity mentions that one should aim for solving the environment in less than `1800` episodes. The committed weights (in [weights/checkpoint.pth](weights/checkpoint.pth)) resulted from a training run which converged after `528` episodes with an average reward of `13.07`. Details about the agent's architecture are given in [Report.md](Report.md).
 
 ## Project Setup
 
