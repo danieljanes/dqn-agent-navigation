@@ -1,9 +1,10 @@
 from collections import deque
 import datetime
 
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
 from typing_extensions import Final
-import numpy as np
 
 from unityagents import UnityEnvironment
 from navigation.agent import Agent
@@ -76,6 +77,19 @@ def main():
             torch.save(agent.dqn_policy.state_dict(), 'weights/checkpoint_' + dt + '.pth')
             break
     env.close()
+
+    # Plotting
+    plot_scores(scores)
+
+
+def plot_scores(scores):
+    # plot the scores
+    fig = plt.figure()
+    _ = fig.add_subplot(111)
+    plt.plot(np.arange(len(scores)), scores)
+    plt.ylabel('Score')
+    plt.xlabel('Episode #')
+    plt.show()
 
 
 if __name__ == "__main__":
